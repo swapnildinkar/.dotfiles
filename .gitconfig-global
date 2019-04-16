@@ -1,0 +1,51 @@
+[user]
+	name = Swapnil Dinkar
+	email = sddinkar@amazon.com
+[includeIf "gitdir:~/.dotfiles/"]
+	path = "~/.dotfiles/.gitconfig"
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+	ui = auto
+[core]
+	pager = less -FMRiX
+	excludesfile = /home/sddinkar/.config/git/excludes
+	editor = vim
+[push]
+	default = current
+[color "diff"]
+    whitespace = red reverse
+# Per-command color customization:
+[color "branch"]
+    current = white reverse
+    local = red 
+    remote = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[alias]
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+    st = status
+    ts = status
+    ci = commit
+    br = branch
+    pop = reset HEAD^
+    co = checkout
+    undo = reset --hard # Use with CAUTION
+    unstage = reset HEAD --
+    diffstat = diff -w --ignore-space-at-eol --stat -r
+    logme = log --author='$USER' --since='2 weeks ago'V
+    gwip = log --author='$USER' --since='2 weeks ago'V
+    oops = commit --amend --no-edit
+    ls = log --pretty=format:"%C(yellow)%h\\ %Creset%s%Cblue\\ [%cn]\\%Cred%d" --decorate
+    ll = ls --numstat
+    wip = "!f(){ ~/.dotfiles/git-wip.sh; };f"
+    unwip = "!f(){ ~/.dotfiles/git-unwip.sh; };f"
+[amazon]
+	append-cr-url = true
+	pull-request-by-default = true
+	suggest-gitfarm-client = shown
+[color "diff"]
+	meta = blue bold
