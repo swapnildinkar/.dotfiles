@@ -30,6 +30,7 @@
     st = status
     ts = status
     ci = commit
+    cp = cherry-pick
     br = branch
     pop = reset HEAD^
     co = checkout
