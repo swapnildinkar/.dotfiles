@@ -25,9 +25,11 @@ SOFTWARE.
 All me dotfiles
 
 # Installation
-Coming soon
+make
 
 # Contents
--- vimrc
--- tmuxrc
--- zshrc
+|- vimrc
+
+|- tmuxrc
+
+|- zshrc
