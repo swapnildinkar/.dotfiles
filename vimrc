@@ -268,6 +268,10 @@ map <F9> :YcmCompleter FixIt<CR>
 set tags=./tags;~/trunk/gp/tags
 "set tags=/home/local/ANT/sddinkar/trunk/gp/tags;./tags
 
+" spell check
+"set spelllang=en_us
+"map <leader>ms :setlocal spell<CR>
+"map <leader>ns :setlocal nospell<CR>
 
 " c indent options
 set cinoptions=t0,:0,(0
@@ -276,6 +280,8 @@ set cinoptions=t0,:0,(0
 set ts=8
 set shiftwidth=8
 set noexpandtab
+
+set relativenumber
 
 " ebs client
 " tab alignment (4 characters, tabs)
