@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/swapnildinkar/.dotfiles.svg?branch=master)](https://travis-ci.org/swapnildinkar/.dotfiles)
+
 MIT License
 
 Copyright (c) [2019] [swapnildinkar/.dotfiles]
