@@ -21,6 +21,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fugitive.vim'
 Plugin 'szw/vim-tags'
+Plugin 'RRethy/vim-illuminate'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
