@@ -1,13 +1,13 @@
 #!/bin/sh
 
 set -e
-if [[ $DEBUG == "true" ]]; then
+if [ $DEBUG == "true" ]; then
 	set -x
 fi
 
 UNAME=$(uname)
 
-if [[ $1 == "install" ]]; then
+if [ $1 == "install" ]; then
 	ln -sfn $(pwd)/vimrc ~/.vimrc
 	ln -sfn $(pwd)/gitconfig-global ~/.gitconfig
 	ln -sfn $(pwd)/tmux.conf ~/.tmux.conf
@@ -22,15 +22,15 @@ if [[ $1 == "install" ]]; then
 			$HOME/.vim/bundle/Vundle.vim
 	fi
 
-	if [[ $UNAME == "Darwin" ]]; then
+	if [ $UNAME == "Darwin" ]; then
 		brew install bat \
 			exa \
 			fd
 		logger -s "Done setting up our Mac!"
-	elif [[ $UNAME == "Linux" ]]; then
+	elif [ $UNAME == "Linux" ]; then
 		if [ $(which lsb_release) ]; then
 			OS=$(lsb_release -si)
-			if [[ $OS == "Ubuntu" ]]; then 
+			if [ $OS == "Ubuntu" ]; then
 				if [[ $(which exa) == "" ]]; then
 					cargo install exa --force
 				fi
@@ -44,7 +44,7 @@ if [[ $1 == "install" ]]; then
 		fi
 	fi
 
-elif [[ $1 == "clean" ]]; then
+elif [ $1 == "clean" ]; then
 	logger -s "Cleaning up"
 
 	rm ~/.vimrc
