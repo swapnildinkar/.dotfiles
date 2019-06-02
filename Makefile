@@ -1,9 +1,9 @@
 all: install
 
 install:
-	maker.sh install
+	sh "$$PWD"/maker.sh install
 
 clean:
-	maker.sh clean
+	sh "$$PWD"/maker.sh clean
 
 .PHONY: clean install
