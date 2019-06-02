@@ -5,8 +5,7 @@ REGION1=us-west-2
 REGION2=us-east-1
 SESSION_NAME=watch-aws
 
-tmux has-session -t $SESSION_NAME
-if [ $? -eq 0 ]
+if tmux has-session -t $SESSION_NAME;
 then
 	echo "killing existing session"
 	tmux kill-session -t $SESSION_NAME

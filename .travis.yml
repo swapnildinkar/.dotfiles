@@ -1,3 +1,4 @@
+language: shell
 os:
 - linux
 - osx
@@ -5,3 +6,5 @@ os:
 script:
 - make
 - make clean
+- bash maker.sh install
+- shellcheck *.sh
