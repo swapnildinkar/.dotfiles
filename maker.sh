@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 if [[ $DEBUG == "true" ]]; then
@@ -15,7 +15,7 @@ if [[ $1 == "install" ]]; then
 	logger -s "$HOME"
 	# load cargo
 	curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
-	sh /tmp/rustup.sh -y
+	sh /tmp/rustup.sh -y > /dev/null
 
 	if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
 		git clone https://github.com/VundleVim/Vundle.vim.git \
