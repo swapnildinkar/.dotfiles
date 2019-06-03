@@ -33,7 +33,7 @@ if [[ $1 == "install" ]]; then
 			OS=$(lsb_release -si)
 			if [[ "$OS" == "Ubuntu" ]]; then
 				if ! [ -x "$(command -v exa)" ]; then
-					"$(HOME)"/.cargo/bin/cargo install exa \
+					"$HOME"/.cargo/bin/cargo install exa \
 						--force
 				fi
 
