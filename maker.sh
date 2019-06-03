@@ -29,7 +29,7 @@ if [[ $1 == "install" ]]; then
 			shellcheck
 		logger -s "Done setting up our Mac!"
 	elif [[ "$UNAME" == "Linux" ]]; then
-		if ! [ -x "$(command -v lsb_release)" ]; then
+		if [ -x "$(command -v lsb_release)" ]; then
 			OS=$(lsb_release -si)
 			if [[ "$OS" == "Ubuntu" ]]; then
 				if ! [ -x "$(command -v exa)" ]; then
