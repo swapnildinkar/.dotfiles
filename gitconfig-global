@@ -42,8 +42,8 @@
     oops = commit --amend --no-edit
     ls = log --pretty=format:"%C(yellow)%h\\ %Creset%s%Cblue\\ [%cn]\\%Cred%d" --decorate
     ll = ls --numstat
-    wip = "!f(){ ~/.dotfiles/git-wip.sh; };f"
-    unwip = "!f(){ ~/.dotfiles/git-unwip.sh; };f"
+    wip = "!f(){ ~/play/.dotfiles/git-wip.sh; };f"
+    unwip = "!f(){ ~/play/.dotfiles/git-unwip.sh; };f"
 [amazon]
 	append-cr-url = true
 	pull-request-by-default = true
