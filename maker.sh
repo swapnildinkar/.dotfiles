@@ -7,6 +7,13 @@ fi
 
 UNAME=$(uname)
 
+cargo_install () {
+	if ! [ -x "$(command -v $1)" ]; then
+		"$HOME"/.cargo/bin/cargo install $1 \
+			--force
+	fi
+}
+
 if [[ $1 == "install" ]]; then
 	ln -sfn "$(pwd)"/vimrc ~/.vimrc
 	ln -sfn "$(pwd)"/gitconfig-global ~/.gitconfig
@@ -27,15 +34,16 @@ if [[ $1 == "install" ]]; then
 			exa \
 			fd \
 			shellcheck
+
+		cargo_install du-dust
+
 		logger -s "Done setting up our Mac!"
 	elif [[ "$UNAME" == "Linux" ]]; then
 		if [ -x "$(command -v lsb_release)" ]; then
 			OS=$(lsb_release -si)
 			if [[ "$OS" == "Ubuntu" ]]; then
-				if ! [ -x "$(command -v exa)" ]; then
-					"$HOME"/.cargo/bin/cargo install exa \
-						--force
-				fi
+				cargo_install exa
+				cargo_install du-dust
 
 				# TODO:
 				# - fd
