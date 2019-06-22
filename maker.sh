@@ -8,8 +8,8 @@ fi
 UNAME=$(uname)
 
 cargo_install () {
-	if ! [ -x "$(command -v $1)" ]; then
-		"$HOME"/.cargo/bin/cargo install $1 \
+	if ! [ -x "$(command -v "$1")" ]; then
+		"$HOME"/.cargo/bin/cargo install "$1" \
 			--force
 	fi
 }
