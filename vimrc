@@ -282,7 +282,7 @@ set ts=8
 set shiftwidth=8
 set noexpandtab
 
-set relativenumber
+silent! set relativenumber
 
 " ebs client
 " tab alignment (4 characters, tabs)
