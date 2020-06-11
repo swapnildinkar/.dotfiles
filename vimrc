@@ -12,7 +12,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Shougo/unite.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'bling/vim-bufferline'
@@ -298,8 +298,6 @@ autocmd BufRead *
 " Unite
 " Content searching like ack.vim (or ag.vim)
 nnoremap <space>/ :Unite grep:.<cr>
-" File searching like ctrlp.vim
-nnoremap <C-p> :Unite file_rec/async<cr>
 " Buffer switching like LustyJuggler
 nnoremap <space>s :Unite -quick-match buffer<cr>
 
