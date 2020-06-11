@@ -20,6 +20,8 @@ if [[ $1 == "install" ]]; then
 	ln -sfn "$(pwd)"/vimrc ~/.vimrc
 	ln -sfn "$(pwd)"/gitconfig-global ~/.gitconfig
 	ln -sfn "$(pwd)"/tmux.conf ~/.tmux.conf
+
+	mkdir -p ~/.oh-my-zsh/themes/
 	ln -sfn "$(pwd)"/swavindin.zsh-theme ~/.oh-my-zsh/themes/swavindin.zsh-theme
 
 	logger -s "$HOME"
