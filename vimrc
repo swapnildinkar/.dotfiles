@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'SuperTab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fugitive.vim'
+Plugin 'tpope/vim-commentary'
 Plugin 'szw/vim-tags'
 Plugin 'RRethy/vim-illuminate'
 
@@ -304,3 +305,6 @@ nnoremap <space>s :Unite -quick-match buffer<cr>
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 let g:ycm_global_ycm_extra_conf = '~/ws/devtools/src/EbsClientDevTools/ycm_config.py'
+
+" vim-commentary
+autocmd FileType apache setlocal commentstring=\\ %s
