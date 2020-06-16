@@ -35,10 +35,14 @@ if [[ $1 == "install" ]]; then
 	fi
 
 	if [[ "$UNAME" == "Darwin" ]]; then
+		# install brew
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 		brew install bat \
 			exa \
 			fd \
-			shellcheck
+			shellcheck \
+			python
 
 		cargo_install du-dust
 
