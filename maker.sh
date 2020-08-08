@@ -42,7 +42,7 @@ if [[ $1 == "install" ]]; then
 			exa \
 			fd \
 			shellcheck \
-			python
+			python && true
 
 		cargo_install du-dust
 
