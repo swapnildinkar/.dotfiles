@@ -13,16 +13,15 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'bling/vim-bufferline'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'SuperTab'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'fugitive.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'szw/vim-tags'
 Plugin 'RRethy/vim-illuminate'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -267,6 +266,18 @@ map <F9> :YcmCompleter FixIt<CR>
 "
 " ctags -R --c-kinds=+p --fields=+l --langmap=c:.c.h *
 
+set laststatus=2
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" fzf search key bindings
+map <C-f> <Esc><Esc>:Files!<CR>
+inoremap <C-f> <Esc><Esc>:BLines!<CR>
+map <C-g> <Esc><Esc>:BCommits!<CR>
+
 set tags=./tags;~/trunk/gp/tags
 "set tags=/home/local/ANT/sddinkar/trunk/gp/tags;./tags
 
@@ -306,5 +317,5 @@ highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 let g:ycm_global_ycm_extra_conf = '~/ws/devtools/src/EbsClientDevTools/ycm_config.py'
 
-" vim-commentary
+" vim-commentary - gc to comment
 autocmd FileType apache setlocal commentstring=\\ %s

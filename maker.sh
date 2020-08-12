@@ -48,19 +48,15 @@ if [[ $1 == "install" ]]; then
 
 		logger -s "Done setting up our Mac!"
 	elif [[ "$UNAME" == "Linux" ]]; then
-		if [ -x "$(command -v lsb_release)" ]; then
-			OS=$(lsb_release -si)
-			if [[ "$OS" == "Ubuntu" ]]; then
-				cargo_install exa
-				cargo_install du-dust
+		cargo_install bat
+		cargo_install exa
+		cargo_install du-dust
+		cargo_install fd-find
 
-				# TODO:
-				# - fd
-				# - awless
-				# - bat
-				logger -s "Done setting up our Ubuntu!"
-			fi
-		fi
+		# TODO:
+		# - awless
+
+		logger -s "Done setting up our Linux box!"
 	fi
 
 elif [[ $1 == "clean" ]]; then
