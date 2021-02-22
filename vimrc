@@ -22,6 +22,12 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'prabirshrestha/asyncomplete.vim'
+" Plugin 'ludovicchabant/vim-gutentags'
+" Plugin 'skywind3000/gutentags_plus'
+Plugin 'skywind3000/vim-preview'
+Plugin 't9md/vim-choosewin'
+" Plugin 'dense-analysis/ale'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -276,7 +282,10 @@ let g:syntastic_check_on_wq = 0
 " fzf search key bindings
 map <C-f> <Esc><Esc>:Files!<CR>
 inoremap <C-f> <Esc><Esc>:BLines!<CR>
-map <C-g> <Esc><Esc>:BCommits!<CR>
+map <C-h> <Esc><Esc>:BCommits!<CR>
+
+" fugitive
+map <C-g> <Esc><Esc>:Gblame<CR>
 
 set tags=./tags;~/trunk/gp/tags
 "set tags=/home/local/ANT/sddinkar/trunk/gp/tags;./tags
@@ -319,3 +328,22 @@ let g:ycm_global_ycm_extra_conf = '~/ws/devtools/src/EbsClientDevTools/ycm_confi
 
 " vim-commentary - gc to comment
 autocmd FileType apache setlocal commentstring=\\ %s
+
+" asyncomplete tab completion
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+imap <c-space> <Plug>(asyncomplete_force_refresh)
+
+" Add to .vimrc to enable project-specific vimrc
+" exrc allows loading local executing local rc files.
+" secure disallows the use of :autocmd, shell and write commands in local .vimrc files.
+set exrc
+set secure
+
+let g:ale_cpp_gcc_options = ' -I ~/ws/ph/src/*/include'
+let g:ale_c_parse_makefile = 1
+
+" vim choose-win helper
+" invoke with '-'
+nmap  -  <Plug>(choosewin)

@@ -1,7 +1,7 @@
 [user]
 	name = Swapnil Dinkar
 	email = sddinkar@amazon.com
-[includeIf "gitdir:~/"]
+[includeIf "gitdir:~/.dotfiles"]
 	path = "~/.dotfiles/.gitconfig"
 [color]
     diff = auto
@@ -40,13 +40,10 @@
     logme = log --author='$USER' --since='2 weeks ago'V
     gwip = log --author='$USER' --since='2 weeks ago'V
     oops = commit --amend --no-edit
+    rbi = rebase -i HEAD~5
     ls = log --pretty=format:"%C(yellow)%h\\ %Creset%s%Cblue\\ [%cn]\\%Cred%d" --decorate
     ll = ls --numstat
     wip = "!f(){ ~/.dotfiles/git-wip.sh; };f"
     unwip = "!f(){ ~/.dotfiles/git-unwip.sh; };f"
-[amazon]
-	append-cr-url = true
-	pull-request-by-default = true
-	suggest-gitfarm-client = shown
 [color "diff"]
 	meta = blue bold
